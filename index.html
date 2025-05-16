@@ -3,77 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fertilizantes Orgánicos - Agricultura Sostenible</title>
+    <title>Fertilizantes: Nutriendo la Agricultura</title>
     <style>
         /* Estilos generales */
-        :root {
-            --verde-primario: #2e7d32;
-            --verde-secundario: #4caf50;
-            --cafe-terciario: #5d4037;
-            --naranja-suave: #ffb74d;
-            --blanco: #f5f5f5;
-            --gris-claro: #e0e0e0;
-        }
-        
-        * {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--blanco);
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
         
-        /* Header */
+        /* Encabezado */
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
+            padding: 2rem 0;
             text-align: center;
-            padding: 2rem 1rem;
-            position: relative;
-        }
-        
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
+            margin: 0;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--blanco);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .logo {
-            max-width: 100px;
-            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         /* Navegación */
         nav {
-            background-color: var(--verde-primario);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background-color: #388E3C;
+            padding: 1rem 0;
         }
         
         nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        
-        nav li {
-            margin: 0 1rem;
+            gap: 2rem;
         }
         
         nav a {
@@ -82,433 +51,341 @@
             font-weight: bold;
             padding: 0.5rem 1rem;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
         
         nav a:hover {
-            background-color: var(--verde-secundario);
+            background-color: #2E7D32;
+            transform: translateY(-2px);
         }
         
         /* Contenido principal */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
         
         section {
-            margin-bottom: 3rem;
             background-color: white;
-            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #8BC34A;
         }
         
         h2 {
-            color: var(--verde-primario);
-            margin-bottom: 1.5rem;
+            color: #2E7D32;
+            margin-top: 0;
+            border-bottom: 2px solid #C8E6C9;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--naranja-suave);
         }
         
         h3 {
-            color: var(--cafe-terciario);
-            margin: 1.5rem 0 1rem;
+            color: #4CAF50;
         }
         
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .img-left {
-            float: left;
-            margin-right: 1.5rem;
-            max-width: 300px;
-        }
-        
-        .img-right {
-            float: right;
-            margin-left: 1.5rem;
-            max-width: 300px;
-        }
-        
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        /* Video */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
+        /* Imágenes */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
             margin: 2rem 0;
         }
         
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .img-container img {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
         
-        /* Formulario */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--gris-claro);
-            padding: 2rem;
-            border-radius: 8px;
+        .img-container img:hover {
+            transform: scale(1.03);
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
+        /* Listas */
+        ul.features {
+            list-style-type: none;
+            padding: 0;
         }
         
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: var(--cafe-terciario);
+        ul.features li {
+            background-color: #E8F5E9;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-left: 4px solid #4CAF50;
+            border-radius: 0 4px 4px 0;
         }
         
-        input, textarea {
+        /* Tabla de tipos */
+        table {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            border-collapse: collapse;
+            margin: 2rem 0;
         }
         
-        textarea {
-            min-height: 150px;
-            resize: vertical;
+        table, th, td {
+            border: 1px solid #C8E6C9;
         }
         
-        button {
-            background-color: var(--verde-primario);
+        th {
+            background-color: #4CAF50;
             color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            padding: 1rem;
+            text-align: left;
         }
         
-        button:hover {
-            background-color: var(--verde-secundario);
+        td {
+            padding: 0.8rem;
+            vertical-align: top;
         }
         
-        /* Footer */
+        tr:nth-child(even) {
+            background-color: #E8F5E9;
+        }
+        
+        /* Enlaces */
+        a {
+            color: #2E7D32;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Pie de página */
         footer {
-            background-color: var(--cafe-terciario);
+            background: linear-gradient(135deg, #4CAF50, #388E3C);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2rem 0;
             margin-top: 2rem;
         }
         
-        footer p {
-            margin-bottom: 0.5rem;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav li {
-                margin: 0.5rem 0;
-            }
-            
-            .img-left, .img-right {
-                float: none;
-                margin: 1rem auto;
-                display: block;
-                max-width: 100%;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        .footer-links a {
+            color: white;
+        }
+        
+        /* Efectos especiales */
+        .highlight {
+            background-color: #FFF9C4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: #FFEBEE;
+            border-left: 5px solid #F44336;
+            padding: 1rem;
+            border-radius: 0 4px 4px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="header-content">
-            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909553.png" alt="Logo fertilizantes orgánicos" class="logo">
-            <h1>Fertilizantes Orgánicos</h1>
-            <p>La alternativa natural para una agricultura sostenible</p>
+        <div class="container">
+            <h1>Fertilizantes: Nutriendo la Agricultura</h1>
+            <p>Todo lo que necesitas saber sobre los nutrientes para tus cultivos</p>
         </div>
     </header>
     
-    <!-- Navegación -->
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#que-son">¿Qué son?</a></li>
             <li><a href="#usos">Usos</a></li>
-            <li><a href="#produccion">Producción</a></li>
             <li><a href="#tipos">Tipos</a></li>
+            <li><a href="#impacto">Impacto</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#riesgos">Riesgos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
     
-    <!-- Contenido principal -->
     <div class="container">
-        <!-- Sección Hosting y Dominio -->
-        <section id="hosting">
-            <h2>Hosting y Dominio</h2>
-            <p>Esta página web podría alojarse en plataformas gratuitas como:</p>
-            <ul>
-                <li><strong>GitHub Pages:</strong> Ideal para proyectos pequeños, permite alojamiento gratuito de sitios web estáticos.</li>
-                <li><strong>Netlify:</strong> Ofrece hosting gratuito con despliegue continuo desde repositorios Git.</li>
-                <li><strong>Vercel:</strong> Similar a Netlify, con buen rendimiento para proyectos frontend.</li>
-            </ul>
-            <p>Para un dominio profesional, se podría registrar nombres como:</p>
-            <ul>
-                <li>fertilizantesorganicos.com</li>
-                <li>agriculturanatural.net</li>
-                <li>abonosverdes.org</li>
-            </ul>
-        </section>
-        
-        <!-- Sección Inicio -->
-        <section id="inicio">
-            <h2>Bienvenidos a la Agricultura Sostenible</h2>
-            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campo agrícola orgánico" class="img-right">
-            <p>En un mundo cada vez más consciente del impacto ambiental, los fertilizantes orgánicos se presentan como la solución perfecta para mantener la productividad de los cultivos sin dañar nuestro planeta.</p>
-            <p>Esta página está dedicada a difundir información sobre los diferentes tipos de fertilizantes naturales, sus beneficios, métodos de producción y aplicación correcta para maximizar sus ventajas.</p>
-            <p>Descubre cómo puedes contribuir a una agricultura más sostenible y saludable mediante el uso de estos productos que trabajan en armonía con la naturaleza.</p>
-            <div class="clearfix"></div>
-        </section>
-        
-        <!-- Sección Qué son -->
         <section id="que-son">
-            <h2>¿Qué son los fertilizantes orgánicos?</h2>
-            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fertilizante orgánico" class="img-left">
-            <p>Los fertilizantes orgánicos son materiales de origen natural que contienen nutrientes esenciales para el crecimiento de las plantas. A diferencia de los fertilizantes sintéticos, estos se derivan de materias primas vegetales, animales o minerales que no han sido procesadas químicamente.</p>
-            <p>Estos fertilizantes mejoran las propiedades físicas, químicas y biológicas del suelo, proporcionando nutrientes de forma gradual y promoviendo la actividad microbiana beneficiosa. Su composición varía según la fuente, pero generalmente contienen nitrógeno, fósforo y potasio, además de micronutrientes y materia orgánica.</p>
-            <p>La característica principal de los fertilizantes orgánicos es que liberan nutrientes lentamente a medida que se descomponen, siguiendo los ciclos naturales del suelo. Esto reduce el riesgo de sobrefertilización y contaminación de aguas subterráneas.</p>
-            <div class="clearfix"></div>
-            <p>Para más información, consulta <a href="https://es.wikipedia.org/wiki/Fertilizante_org%C3%A1nico" target="_blank">el artículo de Wikipedia sobre fertilizantes orgánicos</a>.</p>
-        </section>
-        
-        <!-- Sección Usos -->
-        <section id="usos">
-            <h2>¿Para qué se usan los fertilizantes orgánicos?</h2>
-            <img src="https://images.unsplash.com/photo-1585011650347-c59dbef5e790?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Aplicación de fertilizante" class="img-right">
-            <p>Los fertilizantes orgánicos tienen múltiples aplicaciones en la agricultura y la jardinería:</p>
-            <ul>
-                <li><strong>Mejorar la fertilidad del suelo:</strong> Aportan nutrientes esenciales y mejoran la estructura del suelo.</li>
-                <li><strong>Agricultura sostenible:</strong> Son fundamentales en sistemas de producción orgánica y agroecológica.</li>
-                <li><strong>Recuperación de suelos degradados:</strong> Ayudan a restaurar suelos erosionados o empobrecidos.</li>
-                <li><strong>Huertos familiares:</strong> Ideales para pequeños cultivos donde se busca producir alimentos saludables.</li>
-                <li><strong>Jardinería ecológica:</strong> Mantienen plantas ornamentales sin usar químicos sintéticos.</li>
-                <li><strong>Producción de compost:</strong> Muchos se usan como ingredientes para crear compost de alta calidad.</li>
-            </ul>
-            <p>Según la <a href="http://www.fao.org/organicag/oa-faq/oa-faq5/es/" target="_blank">FAO</a>, el uso adecuado de fertilizantes orgánicos puede aumentar la productividad de los cultivos entre un 10% y 30% en suelos pobres.</p>
-            <div class="clearfix"></div>
-        </section>
-        
-        <!-- Sección Producción -->
-        <section id="produccion">
-            <h2>¿Cómo se producen los fertilizantes orgánicos?</h2>
-            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proceso de compostaje" class="img-left">
-            <p>La producción de fertilizantes orgánicos sigue procesos naturales que pueden variar según el tipo:</p>
+            <h2>¿Qué son los fertilizantes?</h2>
+            <p>Los fertilizantes son sustancias que contienen <span class="highlight">nutrientes esenciales</span> para el crecimiento de las plantas. Estos compuestos se aplican al suelo o directamente a las plantas para <strong>suplir las carencias nutricionales</strong> y mejorar la productividad agrícola.</p>
             
-            <h3>Compostaje</h3>
-            <p>Es el método más común. Consiste en la descomposición controlada de materia orgánica (restos vegetales, estiércol) por microorganismos. El proceso incluye:</p>
-            <ol>
-                <li>Selección y mezcla de materiales (verdes y secos)</li>
-                <li>Apilado en montones o composteras</li>
-                <li>Control de humedad y aireación</li>
-                <li>Maduración por 2 a 6 meses</li>
-            </ol>
-            
-            <h3>Vermicompostaje</h3>
-            <p>Utiliza lombrices (especialmente Eisenia foetida) para transformar la materia orgánica en humus de alta calidad. Es más rápido que el compostaje tradicional (1-3 meses).</p>
-            
-            <h3>Fermentación</h3>
-            <p>Algunos fertilizantes líquidos como los "tés de compost" se producen mediante fermentación anaeróbica o aeróbica de materiales orgánicos en agua.</p>
-            
-            <h3>Procesamiento mínimo</h3>
-            <p>Algunos como la harina de huesos o la ceniza vegetal solo requieren secado y molido de la materia prima.</p>
-            <div class="clearfix"></div>
-        </section>
-        
-        <!-- Sección Tipos -->
-        <section id="tipos">
-            <h2>Tipos comunes de fertilizantes orgánicos</h2>
-            <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Diferentes tipos de fertilizantes" class="img-right">
-            <p>Existe una gran variedad de fertilizantes orgánicos, cada uno con características específicas:</p>
-            
-            <h3>1. Estiércol animal</h3>
-            <p>De vaca, caballo, oveja, aves, etc. Rico en nitrógeno, debe compostarse antes de usar para evitar quemar plantas.</p>
-            
-            <h3>2. Compost</h3>
-            <p>Resultado de la descomposición de residuos vegetales y animales. Mejora la estructura del suelo.</p>
-            
-            <h3>3. Humus de lombriz</h3>
-            <p>Producto del vermicompostaje. Alta concentración de nutrientes y microorganismos beneficiosos.</p>
-            
-            <h3>4. Abonos verdes</h3>
-            <p>Plantas (como leguminosas) que se cultivan y luego incorporan al suelo para enriquecerlo.</p>
-            
-            <h3>5. Harinas (huesos, sangre, pescado)</h3>
-            <p>Procesadas de subproductos animales. Alto contenido en fósforo (huesos) o nitrógeno (sangre).</p>
-            
-            <h3>6. Cenizas vegetales</h3>
-            <p>Ricas en potasio y micronutrientes. Se usan con moderación por su alcalinidad.</p>
-            
-            <h3>7. Fertilizantes líquidos</h3>
-            <p>Como té de compost o purines vegetales (ortiga, consuelda). De acción rápida.</p>
-            <div class="clearfix"></div>
-        </section>
-        
-        <!-- Sección Beneficios -->
-        <section id="beneficios">
-            <h2>Beneficios en el campo y la comunidad</h2>
-            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agricultor feliz" class="img-left">
-            <p>El uso de fertilizantes orgánicos ofrece múltiples ventajas:</p>
-            
-            <h3>Para el suelo</h3>
-            <ul>
-                <li>Mejora la estructura y porosidad, facilitando el desarrollo radicular</li>
-                <li>Aumenta la capacidad de retención de agua</li>
-                <li>Favorece la actividad microbiana beneficiosa</li>
-                <li>Reduce la erosión</li>
-                <li>Regula el pH del suelo</li>
-            </ul>
-            
-            <h3>Para los cultivos</h3>
-            <ul>
-                <li>Nutrición balanceada y gradual</li>
-                <li>Mayor resistencia a plagas y enfermedades</li>
-                <li>Mejor calidad nutricional de los alimentos</li>
-                <li>Mayor vida postcosecha</li>
-            </ul>
-            
-            <h3>Para el ambiente</h3>
-            <ul>
-                <li>Reduce la contaminación de aguas por lixiviación de nitratos</li>
-                <li>Disminuye las emisiones de gases de efecto invernadero</li>
-                <li>Recicla residuos orgánicos que de otro modo serían desechos</li>
-                <li>Promueve la biodiversidad del suelo</li>
-            </ul>
-            
-            <h3>Para la comunidad</h3>
-            <ul>
-                <li>Genera empleo local en producción y aplicación</li>
-                <li>Reduce costos de producción a mediano plazo</li>
-                <li>Produce alimentos más saludables</li>
-                <li>Fomenta la soberanía alimentaria</li>
-            </ul>
-            <div class="clearfix"></div>
-        </section>
-        
-        <!-- Sección Riesgos -->
-        <section id="riesgos">
-            <h2>Riesgos y precauciones</h2>
-            <img src="https://images.unsplash.com/photo-1560258018-e4fcd30a8e1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Protección en el manejo de fertilizantes" class="img-right">
-            <p>Aunque son más seguros que los químicos, los fertilizantes orgánicos mal usados pueden causar problemas:</p>
-            
-            <h3>Contaminación microbiológica</h3>
-            <p>Estiércoles sin compostar pueden contener E. coli, Salmonella u otros patógenos. Siempre deben procesarse adecuadamente, especialmente para cultivos que se consumen crudos.</p>
-            
-            <h3>Contaminación por metales pesados</h3>
-            <p>Algunos subproductos animales pueden acumular metales si los animales fueron alimentados con dietas contaminadas. Es importante conocer el origen de los materiales.</p>
-            
-            <h3>Salinización del suelo</h3>
-            <p>El exceso de ciertos fertilizantes como la gallinaza puede aumentar la salinidad del suelo. Se deben usar con moderación y alternar con otros tipos.</p>
-            
-            <h3>Desequilibrios nutricionales</h3>
-            <p>Algunos fertilizantes orgánicos tienen proporciones desbalanceadas de nutrientes. Por ejemplo, la harina de huesos es rica en fósforo pero pobre en potasio.</p>
-            
-            <h3>Recomendaciones para uso seguro</h3>
-            <ul>
-                <li>Compostar adecuadamente los estiércoles antes de usar</li>
-                <li>Conocer la procedencia de los materiales</li>
-                <li>Realizar análisis de suelo para determinar necesidades</li>
-                <li>Usar equipo de protección al manipular algunos fertilizantes</li>
-                <li>Respetar los periodos de carencia antes de cosechar</li>
-                <li>Almacenar correctamente para evitar proliferación de patógenos</li>
-            </ul>
-            <div class="clearfix"></div>
-            <p>La <a href="http://www.fao.org/3/y4137s/y4137s0e.htm" target="_blank">FAO ofrece guías</a> sobre el manejo seguro de fertilizantes orgánicos.</p>
-        </section>
-        
-        <!-- Video -->
-        <section>
-            <h2>Video explicativo sobre fertilizantes orgánicos</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/9NCV8eWzP9k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce" alt="Fertilizantes en campo agrícola" width="400">
+                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae" alt="Agricultor aplicando fertilizante" width="400">
             </div>
-            <p>Este video de YouTube explica de manera sencilla los beneficios y métodos de aplicación de los fertilizantes orgánicos.</p>
+            
+            <p>Desde la antigüedad, los agricultores han utilizado diversas formas de fertilización para mejorar sus cosechas. Hoy en día, los fertilizantes modernos son productos científicos diseñados para proporcionar nutrientes específicos en las cantidades adecuadas.</p>
         </section>
         
-        <!-- Formulario de contacto -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Tienes preguntas sobre fertilizantes orgánicos? ¡Escríbenos!</p>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                </div>
-                
-                <button type="submit">Enviar mensaje</button>
-            </form>
+        <section id="usos">
+            <h2>¿Para qué se usan los fertilizantes?</h2>
+            <p>Los fertilizantes tienen múltiples usos en la agricultura y la jardinería:</p>
+            
+            <ul class="features">
+                <li><strong>Mejorar el crecimiento vegetal:</strong> Proporcionan nutrientes esenciales que pueden faltar en el suelo natural.</li>
+                <li><strong>Aumentar la productividad agrícola:</strong> Permiten obtener mayores rendimientos por hectárea cultivada.</li>
+                <li><strong>Corregir deficiencias nutricionales:</strong> Solucionan problemas específicos de falta de nutrientes en las plantas.</li>
+                <li><strong>Mejorar la calidad de los cultivos:</strong> Influencian positivamente el tamaño, color, sabor y valor nutricional de los productos agrícolas.</li>
+                <li><strong>Recuperar suelos agotados:</strong> Ayudan a restaurar tierras que han perdido su fertilidad natural.</li>
+            </ul>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d" alt="Cultivos saludables gracias a fertilizantes" width="600">
+            </div>
         </section>
         
-        <!-- Referencias -->
-        <section id="referencias">
-            <h2>Referencias bibliográficas</h2>
-            <p style="font-style: italic;">Las siguientes fuentes fueron consultadas para la elaboración de este contenido:</p>
-            <ol>
-                <li>Food and Agriculture Organization of the United Nations. (2017). Soil fertility management in organic farming. Recuperado de http://www.fao.org/3/a-bl090s.pdf</li>
-                <li>Gómez, M. (2019). Manual práctico de fertilización orgánica. Ediciones Mundi-Prensa.</li>
-                <li>Parr, J. F., Papendick, R. I., & Colacicco, D. (2020). Organic farming and sustainable agriculture. Sustainable Agriculture Reviews, 46, 15-34. https://doi.org/10.1007/978-3-030-41381-3_2</li>
-                <li>Reganold, J. P., & Wachter, J. M. (2016). Organic agriculture in the twenty-first century. Nature Plants, 2(2), 15221. https://doi.org/10.1038/nplants.2015.221</li>
-                <li>Wikipedia contributors. (2021). Organic fertilizer. En Wikipedia, The Free Encyclopedia. Recuperado de https://en.wikipedia.org/w/index.php?title=Organic_fertilizer&oldid=1053456781</li>
-            </ol>
+        <section id="tipos">
+            <h2>Tipos de fertilizantes</h2>
+            <p>Existen diversas clasificaciones de fertilizantes según su origen, presentación y composición:</p>
+            
+            <h3>Por origen</h3>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplos</th>
+                </tr>
+                <tr>
+                    <td><strong>Orgánicos</strong></td>
+                    <td>Proceden de materia animal o vegetal. Liberan nutrientes lentamente y mejoran la estructura del suelo.</td>
+                    <td>Estiércol, compost, humus de lombriz, harina de huesos</td>
+                </tr>
+                <tr>
+                    <td><strong>Inorgánicos o químicos</strong></td>
+                    <td>Producidos industrialmente, contienen nutrientes en forma mineral. Actúan más rápidamente.</td>
+                    <td>Urea, nitrato de amonio, superfosfato, cloruro de potasio</td>
+                </tr>
+            </table>
+            
+            <h3>Por presentación</h3>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Ventajas</th>
+                    <th>Desventajas</th>
+                </tr>
+                <tr>
+                    <td><strong>Sólidos</strong></td>
+                    <td>Presentados en gránulos, polvo o cristales</td>
+                    <td>Fáciles de almacenar y aplicar, liberación prolongada</td>
+                    <td>Pueden lavarse con la lluvia, distribución menos uniforme</td>
+                </tr>
+                <tr>
+                    <td><strong>Líquidos</strong></td>
+                    <td>Soluciones o suspensiones acuosas</td>
+                    <td>Absorción rápida, aplicación precisa, mezcla fácil</td>
+                    <td>Requieren equipo especializado, efecto más corto</td>
+                </tr>
+            </table>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1584735422188-359aea51a413" alt="Fertilizantes orgánicos" width="300">
+                <img src="https://images.unsplash.com/photo-1589984662646-e7b2e4962f18" alt="Fertilizantes químicos" width="300">
+                <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e" alt="Fertilizante líquido" width="300">
+            </div>
+        </section>
+        
+        <section id="impacto">
+            <h2>Influencia en la comunidad y el campo</h2>
+            <p>Los fertilizantes han transformado radicalmente la agricultura y tienen un profundo impacto en las comunidades:</p>
+            
+            <ul class="features">
+                <li><strong>Seguridad alimentaria:</strong> Han permitido alimentar a una población mundial en constante crecimiento.</li>
+                <li><strong>Desarrollo económico:</strong> La industria de fertilizantes genera empleos y actividad económica en zonas rurales.</li>
+                <li><strong>Cambios en patrones agrícolas:</strong> Permiten cultivar en suelos menos fértiles y reducir la necesidad de barbecho.</li>
+                <li><strong>Especialización agrícola:</strong> Facultan la producción intensiva de cultivos específicos.</li>
+                <li><strong>Migración rural-urbana:</strong> Al aumentar la productividad, reducen la mano de obra necesaria en el campo.</li>
+            </ul>
+            
+            <p>Sin embargo, su uso intensivo también ha generado debates sobre sostenibilidad, impacto ambiental y salud pública.</p>
+        </section>
+        
+        <section id="beneficios">
+            <h2>Beneficios para la agricultura</h2>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Campo fértil gracias a fertilizantes" width="500">
+            </div>
+            
+            <p>El uso adecuado de fertilizantes ofrece numerosas ventajas para la producción agrícola:</p>
+            
+            <ul class="features">
+                <li><strong>Aumento de rendimientos:</strong> Pueden duplicar o triplicar la producción por hectárea.</li>
+                <li><strong>Cultivos más resistentes:</strong> Plantas bien nutridas son menos susceptibles a enfermedades y plagas.</li>
+                <li><strong>Mayor eficiencia en el uso de la tierra:</strong> Reducen la necesidad de expandir tierras cultivables.</li>
+                <li><strong>Precisión nutricional:</strong> Permiten corregir deficiencias específicas de cada suelo y cultivo.</li>
+                <li><strong>Flexibilidad agrícola:</strong> Facultan el cultivo de especies exigentes en suelos menos favorables.</li>
+                <li><strong>Rentabilidad:</strong> Incrementan los ingresos de los agricultores al mejorar la calidad y cantidad de cosechas.</li>
+            </ul>
+        </section>
+        
+        <section id="riesgos">
+            <h2>Riesgos y daños potenciales</h2>
+            
+            <div class="warning">
+                <h3>Uso excesivo o inadecuado</h3>
+                <p>Cuando los fertilizantes se aplican sin control pueden causar diversos problemas:</p>
+            </div>
+            
+            <h3>Para el ser humano</h3>
+            <ul class="features">
+                <li><strong>Contaminación de agua potable:</strong> Nitratos en agua subterránea pueden causar metahemoglobinemia (síndrome del bebé azul).</li>
+                <li><strong>Residuos en alimentos:</strong> Acumulación de nitritos y otros compuestos potencialmente cancerígenos.</li>
+                <li><strong>Exposición laboral:</strong> Riesgos para trabajadores agrícolas por inhalación o contacto con productos químicos.</li>
+            </ul>
+            
+            <h3>Para el medio ambiente</h3>
+            <ul class="features">
+                <li><strong>Eutrofización:</strong> Exceso de nutrientes en cuerpos de agua que causa proliferación de algas y muerte de ecosistemas acuáticos.</li>
+                <li><strong>Acidificación de suelos:</strong> Algunos fertilizantes reducen el pH del suelo afectando su microbiología.</li>
+                <li><strong>Emisiones de gases:</strong> Óxido nitroso (potente gas de efecto invernadero) y amoníaco.</li>
+                <li><strong>Pérdida de biodiversidad:</strong> Monocultivos intensivos reducen hábitats naturales.</li>
+                <li><strong>Contaminación de suelos:</strong> Acumulación de metales pesados y otros contaminantes.</li>
+            </ul>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1613051888994-6d0e2b2b0b7a" alt="Eutrofización en lago" width="400">
+                <img src="https://images.unsplash.com/photo-1589561253898-768105ca91a8" alt="Suelo contaminado" width="400">
+            </div>
+            
+            <p>La solución está en el <strong>uso responsable</strong>, siguiendo las dosis recomendadas y combinando con prácticas agrícolas sostenibles.</p>
+        </section>
+        
+        <section>
+            <h2>Más información</h2>
+            <p>Para aprender más sobre fertilizantes y su uso responsable, visita estos recursos confiables:</p>
+            <ul class="features">
+                <li><a href="https://www.fao.org/agriculture/crops/thematic-sitemap/theme/spi/soil-fertilizers/es/" target="_blank">FAO - Fertilizantes y suelos</a></li>
+                <li><a href="https://www.epa.gov/nutrientpollution" target="_blank">EPA - Contaminación por nutrientes (en inglés)</a></li>
+                <li><a href="https://www.fertilizantes.org/" target="_blank">Asociación Española de Fabricantes de Fertilizantes</a></li>
+                <li><a href="https://www.worldfertilizer.com/" target="_blank">World Fertilizer (noticias e investigaciones)</a></li>
+            </ul>
         </section>
     </div>
     
-    <!-- Footer -->
     <footer>
-        <p>© 2023 Fertilizantes Orgánicos - Todos los derechos reservados</p>
-        <p>Página web educativa creada para promover la agricultura sostenible</p>
-        <p>Contacto: info@fertilizantesorganicos.com</p>
+        <div class="container">
+            <h3>Fertilizantes: Nutriendo la Agricultura</h3>
+            <p>Información educativa sobre el uso responsable de fertilizantes</p>
+            
+            <div class="footer-links">
+                <a href="#que-son">Inicio</a>
+                <a href="#riesgos">Uso responsable</a>
+                <a href="#tipos">Tipos de fertilizantes</a>
+            </div>
+            
+            <p>© 2023 - Todos los derechos reservados | Diseño agrícola sostenible</p>
+        </div>
     </footer>
 </body>
 </html>
